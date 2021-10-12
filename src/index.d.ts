@@ -1,10 +1,10 @@
 declare module 'url-env' {
-  type EnvObject = {
+  type EnvObject<T> = {
     pair: string[];
     url: string;
-    env: string;
+    env: T;
   }
 
-  export function fromArray<T>(environmentsAsArrayOfArrays: T[][], matchUrl?: string): EnvObject;
-  export function fromObject(environments: { [key: string]: string }, matchUrl?: string): EnvObject;
+  export function fromArray<T>(environmentsAsArrayOfArrays: [string, T][], matchUrl?: string): EnvObject<T>;
+  export function fromObject<T>(environments: { [key: string]: T }, matchUrl?: string): EnvObject<T>;
 }
