@@ -1,6 +1,6 @@
 {
   "name": "url-env",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Select an environment by url",
   "type": "module",
   "main": "./dist/url-env.cjs.js",
