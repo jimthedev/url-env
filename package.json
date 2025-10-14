@@ -2,20 +2,61 @@
   "name": "url-env",
   "version": "1.0.2",
   "description": "Select an environment by url",
-  "main": "./src/index.js",
-  "types": "./src/index.d.ts",
+  "type": "module",
+  "main": "./dist/url-env.cjs.js",
+  "module": "./dist/url-env.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/url-env.es.js",
+      "require": "./dist/url-env.cjs.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest --coverage",
+    "prepublishOnly": "npm run test:run && npm run build",
+    "release:patch": "npm version patch && git push --follow-tags",
+    "release:minor": "npm version minor && git push --follow-tags",
+    "release:major": "npm version major && git push --follow-tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jimthedev/url-env.git"
   },
-  "keywords": [],
+  "keywords": [
+    "environment",
+    "url",
+    "configuration",
+    "typescript",
+    "browser",
+    "nodejs",
+    "environment-detection",
+    "url-matching"
+  ],
   "author": "Jim Cummins <jimthedev@gmail.com> (http://github.com/jimthedev)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jimthedev/url-env/issues"
   },
-  "homepage": "https://github.com/jimthedev/url-env#readme"
+  "homepage": "https://github.com/jimthedev/url-env#readme",
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "jsdom": "^27.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.2.4"
+  }
 }
