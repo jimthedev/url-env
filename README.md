@@ -25,8 +25,7 @@ npm install url-env
 
 ## Usage
 
-Make sure you include polyfills for Object.prototype.entries and String.prototype.startsWith if you need this to work with older browsers. We recommend https://polyfill.io but if you are using a framework then it may already have this covered for you.
-
+Make sure you include polyfills for Object.prototype.entries and String.prototype.startsWith if you need this to work with older browsers.
 
 ### Basic Usage (JavaScript)
 
