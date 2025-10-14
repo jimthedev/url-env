@@ -36,7 +36,7 @@ jobs:
     
     - name: Generate coverage report
       if: matrix.node-version == '22.x'
-      run: npm run test:coverage -- --reporter=lcov
+      run: npm run test:coverage
     
     - name: Upload coverage reports to Codecov
       if: matrix.node-version == '22.x'
