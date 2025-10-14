@@ -107,6 +107,10 @@ if (result.env.local) {
 const {pair, url, env} = fromObject(availableEvironments, 'https://staging.mydomain.com/some/path');
 ```
 
+### Cutting a release (it is crucial for CI to be on latest npm for trusted publishing)
 
-
-
+- Put in as many pull requests into main
+- Switch to main locally and pull it down to make sure it is fresh
+- Run `npm run release:patch` (or minor/major) which will make a tag
+- Manually create GitHub release from the new tag from the last step
+- GitHub Actions will auto-publish
